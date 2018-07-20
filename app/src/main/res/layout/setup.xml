@@ -1,0 +1,172 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/QRCodeWhiteColor"
+    android:theme="@style/Theme.AppCompat.Light.NoActionBar"
+    tools:context="com.example.brown.ecard.Setup">
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        app:srcCompat="@drawable/header"
+        tools:layout_editor_absoluteY="-204dp"
+        android:layout_marginLeft="0dp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        android:layout_marginRight="8dp"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintHorizontal_bias="0.0" />
+
+    <RelativeLayout
+        android:id="@+id/relativeLayout"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="1.0">
+
+        <android.support.design.widget.TextInputLayout
+            android:id="@+id/textInputLayout"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="153dp"
+            android:weightSum="1"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true">
+
+            <EditText
+                android:id="@+id/company"
+                android:layout_width="320dp"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/textInputLayout"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="63dp"
+                android:layout_weight="1"
+                android:drawableLeft="@drawable/building"
+                android:drawablePadding="10dp"
+                android:ems="10"
+                android:hint="Company"
+                android:inputType="textPersonName"
+                android:textColorHint="@color/colorPrimaryDark" />
+        </android.support.design.widget.TextInputLayout>
+
+        <android.support.design.widget.TextInputLayout
+            android:id="@+id/textInputLayout2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignStart="@+id/textInputLayout"
+            android:layout_below="@+id/textInputLayout"
+            android:weightSum="1">
+
+            <EditText
+                android:id="@+id/occupation"
+                android:layout_width="320dp"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/textInputLayout"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="63dp"
+                android:layout_weight="1"
+                android:drawableLeft="@drawable/id_card"
+                android:drawablePadding="10dp"
+                android:ems="10"
+                android:hint="Occupation"
+                android:inputType="textPersonName"
+                android:textColorHint="@color/colorPrimaryDark" />
+        </android.support.design.widget.TextInputLayout>
+
+        <android.support.design.widget.TextInputLayout
+            android:id="@+id/textInputLayout3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignStart="@+id/textInputLayout2"
+            android:layout_below="@+id/textInputLayout2"
+            android:weightSum="1">
+
+            <EditText
+                android:id="@+id/workemail"
+                android:layout_width="320dp"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/textInputLayout"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="63dp"
+                android:layout_weight="1"
+                android:drawableLeft="@drawable/mail"
+                android:drawablePadding="10dp"
+                android:ems="10"
+                android:hint="Work Email"
+                android:inputType="textEmailAddress"
+                android:textColorHint="@color/colorPrimaryDark" />
+        </android.support.design.widget.TextInputLayout>
+
+        <android.support.design.widget.TextInputLayout
+            android:id="@+id/textInputLayout4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignStart="@+id/textInputLayout3"
+            android:layout_below="@+id/textInputLayout3"
+            android:weightSum="1">
+
+            <EditText
+                android:id="@+id/worknumber"
+                android:layout_width="320dp"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/textInputLayout"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="63dp"
+                android:layout_weight="1"
+                android:drawableLeft="@drawable/phone_call"
+                android:drawablePadding="10dp"
+                android:ems="10"
+                android:hint="Work Number"
+                android:inputType="phone"
+                android:textColorHint="@color/colorPrimaryDark" />
+        </android.support.design.widget.TextInputLayout>
+
+        <android.support.design.widget.TextInputLayout
+            android:id="@+id/textInputLayout5"
+            android:layout_width="320dp"
+            android:layout_height="wrap_content"
+            android:layout_alignStart="@+id/textInputLayout4"
+            android:layout_below="@+id/textInputLayout4"
+            android:weightSum="1">
+
+            <EditText
+                android:id="@+id/fax"
+                android:layout_width="320dp"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/textInputLayout"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="63dp"
+                android:layout_weight="1"
+                android:drawableLeft="@drawable/fax"
+                android:drawablePadding="10dp"
+                android:ems="10"
+                android:hint="Fax"
+                android:inputType="phone"
+                android:textColorHint="@color/colorPrimaryDark" />
+        </android.support.design.widget.TextInputLayout>
+
+        <Button
+            android:id="@+id/submitcard"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignEnd="@+id/textInputLayout5"
+            android:layout_alignStart="@+id/textInputLayout5"
+            android:layout_below="@+id/textInputLayout5"
+            android:layout_marginTop="16dp"
+            android:background="@color/colorPrimary"
+            android:elevation="10dp"
+            android:stateListAnimator="@null"
+            android:text="Register"
+            android:textColor="@color/QRCodeWhiteColor" />
+
+    </RelativeLayout>
+
+</android.support.constraint.ConstraintLayout>

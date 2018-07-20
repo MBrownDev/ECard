@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+
+        <RelativeLayout
+            android:id="@+id/layout_holder"
+            android:layout_width="match_parent"
+            android:layout_height="210dp"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentStart="true">
+
+        <ImageView
+                android:id="@+id/QR"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+            android:layout_centerVertical="true"
+            android:layout_centerHorizontal="true" />
+
+        <ImageView
+            android:id="@+id/logo"
+            android:layout_width="match_parent"
+            android:layout_height="210dp"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentStart="true" />
+        </RelativeLayout>
+
+        <android.support.v7.widget.CardView
+            android:id="@+id/cardView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            app:cardBackgroundColor="#FFFF"
+            android:layout_below="@+id/layout_holder"
+            android:layout_alignParentStart="true">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/name"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:drawableLeft="@drawable/man_small"
+                    android:drawablePadding="5dp"
+                    android:text="TextView"
+                    android:textSize="18sp" />
+
+                <TextView
+                    android:id="@+id/company"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:drawableLeft="@drawable/building_small"
+                    android:drawablePadding="5dp"
+                    android:text="TextView"
+                    android:textSize="14sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/occupation"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:drawableLeft="@drawable/id_card_small"
+                    android:drawablePadding="5dp"
+                    android:text="TextView"
+                    android:textSize="14sp"
+                    android:textStyle="italic" />
+
+                <TextView
+                    android:id="@+id/email"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:drawableLeft="@drawable/mail_small"
+                    android:drawablePadding="5dp"
+                    android:text="TextView"
+                    android:textSize="14sp" />
+
+                <TextView
+                    android:id="@+id/number"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:drawableLeft="@drawable/phone_call_small"
+                    android:drawablePadding="5dp"
+                    android:text="TextView"
+                    android:textSize="14sp" />
+
+                <TextView
+                    android:id="@+id/fax"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:drawableLeft="@drawable/fax_small"
+                    android:drawablePadding="5dp"
+                    android:text="TextView"
+                    android:textSize="14sp" />
+
+                <ImageButton
+                    android:id="@+id/information"
+                    android:layout_width="24dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="right"
+                    android:background="#FFFF"
+                    android:onClick="toFront"
+                    android:src="@drawable/info_small" />
+            </LinearLayout>
+        </android.support.v7.widget.CardView>
+
+
+</RelativeLayout>

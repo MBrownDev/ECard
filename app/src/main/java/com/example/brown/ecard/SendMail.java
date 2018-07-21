@@ -7,6 +7,8 @@ import android.widget.Toast;
 
 import java.util.Properties;
 
+import com.sun.mail.util.MailLogger;
+
 import javax.mail.Message;
 import javax.mail.MessagingException;
 import javax.mail.PasswordAuthentication;

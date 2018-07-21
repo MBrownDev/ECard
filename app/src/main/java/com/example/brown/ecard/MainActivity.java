@@ -10,6 +10,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.LinearLayout;
@@ -89,7 +90,44 @@ public class MainActivity extends Activity {
         idStore(code);
         SendMail sm = new SendMail(MainActivity.this, emailstring, subject, code);
 
-        cardHelper.insertData(code, firststring, laststring, emailstring);
+        sm.execute();
+
+        alert = new AlertDialog.Builder(MainActivity.this);
+        alert.setTitle("Verify Account");
+        alert.setMessage("Enter account verification code");
+
+        final EditText input = new EditText(MainActivity.this);
+        LinearLayout.LayoutParams lp = new LinearLayout.LayoutParams(
+                ViewGroup.LayoutParams.MATCH_PARENT,
+                ViewGroup.LayoutParams.MATCH_PARENT
+        );
+        input.setLayoutParams(lp);
+        alert.setView(input);
+
+        alert.setPositiveButton("SUBMIT", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                String vc = input.getText().toString();
+
+                    if (vc.equals(code)) {
+                        cardHelper.insertData(code, firststring, laststring, emailstring);
+
+                        UploadProfile uploadProfile = new UploadProfile(MainActivity.this);
+                        UploadCardInfo uploadCardInfo = new UploadCardInfo(MainActivity.this);
+                        uploadProfile.execute(METHOD, code, firststring, laststring, emailstring, passstring);
+                        uploadCardInfo.execute(METHOD, code);
+
+                        alert.setTitle("Verification Successful!");
+                        alert.setMessage("Account Registration Complete.");
+                        dialog.dismiss();
+                    } else if(!vc.equals(code)){
+                        alert.setTitle("Incorrect Code!");
+                        alert.setMessage("Please try again or resubmit email address.");
+                    }
+            }
+        }) ;
+
+    /*    cardHelper.insertData(code, firststring, laststring, emailstring);
         UploadProfile uploadProfile = new UploadProfile(MainActivity.this);
         UploadCardInfo uploadCardInfo = new UploadCardInfo(MainActivity.this);
         uploadProfile.execute(METHOD, code, firststring, laststring, emailstring, passstring);
@@ -98,7 +136,7 @@ public class MainActivity extends Activity {
         Log.d("Sub",firststring);
 
         Intent toSetup = new Intent(MainActivity.this,Setup.class);
-        startActivity(toSetup);
+        startActivity(toSetup); */
 //        sm.execute();
 //        //regAlert(METHOD,code,firststring,laststring,emailstring,passstring);
 //        if (emailstring.contains(".com")) {
